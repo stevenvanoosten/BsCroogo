@@ -1,3 +1,16 @@
+<?php
+// Adjusting content width
+if ($this->Regions->blocks('left') and $this->Regions->blocks('right')) {
+	$span = "span6";
+}
+elseif ($this->Regions->blocks('left') xor $this->Regions->blocks('right')) {
+	$span = "span9";
+}
+else {
+	$span = "span12";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,33 +37,47 @@
 
 </head>
 <body>
-	<?php echo $this->element('header'); ?>	
+	<div id="wrap">
+		<?php echo $this->element('header'); ?>
+		
+		<div class="container">
+			<div class="row-fluid">
+				<?php if ($this->Regions->blocks('left')): ?>
+					<div class="span3">
+						<?php echo $this->Regions->blocks('left'); ?>
+					</div>
+				<?php endif; ?>
 	
-	<div class="container">
-		<div id="main" class="row-fluid">
-			<div id="content" class="span9">
-			<?php
-				echo $this->Layout->sessionFlash();
-				echo $content_for_layout;
-			?>
-			</div>
-
-			<div id="sidebar" class="span3">
-			<?php echo $this->Regions->blocks('right'); ?>
+				<div class="<?php echo $span; ?>">
+				<?php
+					echo $this->Layout->sessionFlash();
+					echo $content_for_layout;
+				?>
+				</div>
+				
+				<?php if ($this->Regions->blocks('right')): ?>
+					<div class="span3">
+						<?php echo $this->Regions->blocks('right'); ?>
+					</div>
+				<?php endif; ?>
 			</div>
 		</div>
+		<div id="push"></div>
+</div>
 
-		<div id="footer">
-			<div class="row-fluid">
-				<div class="pull-left">
-					Powered by <a href="http://www.croogo.org">Croogo</a>.
-				</div>
-				<div class="pull-right">
-					<a href="http://www.cakephp.org"><?php echo $this->Html->image('/img/cake.power.gif'); ?></a>
-				</div>
+<div id="footer">
+	<div class="container">
+		<div class="row-fluid">
+			<div class="pull-left">
+				Powered by <a href="http://www.croogo.org">Croogo</a>.
+			</div>
+			<div class="pull-right">
+				<a href="http://www.cakephp.org"><?php echo $this->Html->image('/img/cake.power.gif'); ?></a>
 			</div>
 		</div>
 	</div>
+</div>
+	
 	<?php
 		echo $this->Blocks->get('scriptBottom');
 		echo $this->Js->writeBuffer();

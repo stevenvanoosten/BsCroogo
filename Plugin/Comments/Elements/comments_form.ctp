@@ -20,7 +20,6 @@
 
 		echo $this->Form->create('Comment', array('url' => $formUrl));
 			$this->Form->inputDefaults(array(
-				'label' => false,
 				'class' => 'span8',
 			));
 			if ($this->Session->check('Auth.User.id')) {
@@ -50,6 +49,9 @@
 			if ($type['Type']['comment_captcha']) {
 				echo $this->Recaptcha->display_form();
 			}
-		echo $this->Form->end(__('Post comment'));
+		echo $this->Form->end(array(
+			'class' => 'btn btn-primary',
+			'label' => __('Post comment'),
+		));
 	?>
 </div>

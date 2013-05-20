@@ -3,7 +3,7 @@
 
 	<?php
 		if (count($nodes) == 0) {
-			echo __('No items found.');
+			echo __d('croogo', 'No items found.');
 		}
 	?>
 
@@ -23,15 +23,5 @@
 		endforeach;
 	?>
 
-	<div class="pagination">
-	<ul>
-	<?php
-		echo $this->Paginator->first('< first');
-		echo $this->Paginator->prev('< prev');
-		echo $this->Paginator->numbers();
-		echo $this->Paginator->next('next >');
-		echo $this->Paginator->last('last >');
-	?>
-	</ul>
-	</div>
+	<div class="paging"><?php echo $this->Paginator->numbers(); ?></div>
 </div>

@@ -5,7 +5,7 @@
 
 	"author" : "Steven van Oosten",
 	"authorEmail" : "stevenvanoosten@outlook.com",
-	"authorUrl" : "www.santoswebdesign.nl",
+	"authorUrl" : "https://twitter.com/stevenvanoosten",
 
 	"menus" : [
 		"main",
@@ -13,6 +13,7 @@
 		],
 
 	"regions" : [
+		"left",
 		"right"
 		]
 }

@@ -15,19 +15,29 @@
 				$contact['Contact']['alias'],
 			),
 		));
-
 		$this->Form->inputDefaults(array(
-			'label' => false,
 			'class' => 'span8',
 		));
-		echo $this->Form->input('Message.name', array('placeholder' => __('Your name')));
-		echo $this->Form->input('Message.email', array('placeholder' => __('Your email')));
-		echo $this->Form->input('Message.title', array('placeholder' => __('Subject')));
-		echo $this->Form->input('Message.body', array('placeholder' => __('Message')));
+		echo $this->Form->input('Message.name', array(
+			'placeholder' => __('Your name'),
+			));
+		echo $this->Form->input('Message.email', array(
+			'placeholder' => __('Your email'),
+			));
+		echo $this->Form->input('Message.title', array(
+			'placeholder' => __('Subject'),
+			));
+		echo $this->Form->input('Message.body', array(
+			'placeholder' => __('Message'),
+			));
 		if ($contact['Contact']['message_captcha']):
 			echo $this->Recaptcha->display_form();
 		endif;
-		echo $this->Form->end(__('Send'));
+		echo $this->Form->end(array(
+			'class' => 'btn btn-primary',
+			'label' => __('Send'),
+			)
+		);
 	?>
 	</div>
 	<?php endif; ?>
