@@ -3,5 +3,5 @@ BsCroogo
 
 A Bootstrap theme for Croogo (a cms based on CakePHP)
 
-<img> </img>
+![Alt text](/webroot/img/screenshot.png "thumb")
 
