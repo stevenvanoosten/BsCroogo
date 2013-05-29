@@ -9,7 +9,7 @@
 			 <a class="brand" href="#"><?php echo Configure::read('Site.title'); ?></a>
 			<div class="nav-collapse collapse">
 				<?php echo $this->Custom->menu('main', array('dropdown' => true)); ?>
-			</div><!--/.nav-collapse -->
+			</div>
 		</div>
 	</div>
 </header>

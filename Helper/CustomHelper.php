@@ -2,13 +2,6 @@
 /**
  * Custom Helper
  *
- *
- * @category Helper
- * @package  Croogo
- * @version  1.0
- * @author   Nitish Dhar (@nitishdhar)
- * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link	 http://www.croogo.org
  */
 class CustomHelper extends Helper {
 
