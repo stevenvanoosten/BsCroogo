@@ -6,16 +6,11 @@ if ($block['Block']['class'] != null) {
 	$class .= ' ' . $b['class'];
 }
 ?>
-
-<div class="accordion-group">
-	<div class="accordion-heading">
-		<a class="accordion-toggle" data-toggle="collapse" data-parent="#theme_accordion" href="#block-<?php echo $b['id']; ?>">
-			<h3><?php echo $b['title']; ?></h3>
-		</a>
-	</div>
-	<div id="block-<?php echo $b['id']; ?>" class="accordion-body collapse <?php echo $class; ?>">
-		<div class="accordion-inner">
-			<?php echo $this->Layout->filter($b['body']); ?>
-		</div>
+<div id="block-<?php echo $b['id']; ?>" class="<?php echo $class; ?>">
+<?php if ($b['show_title'] == 1):  ?>
+	<h3><?php echo $b['title']; ?></h3>
+<?php endif; ?>
+	<div class="block-body">
+<?php echo $this->Layout->filter($b['body']); ?>
 	</div>
 </div>
